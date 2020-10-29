@@ -1,0 +1,59 @@
+﻿@{
+    var account = (Account)Model;
+}
+
+<body class="registro">
+    <div class="tm-section tm-bg-img" id="tm-section-1">
+        <div class="container text-md-center">
+            <div class="row justify-content-center pt-5 mt-5 mr-1">
+                <div class="col-md-4 formulario">
+                    <form action="/account/register" method="post">
+                        <div class="form-group text-center">
+                            <br />
+                            <h3 class="titulo">Registrate </h3>
+                        </div>
+                        <div class="form-group mx-sm-4 ">
+                            <input type="text" value="@account.Nombre" name="Nombre" class="form-control" placeholder="Nombre" />
+                            <span class="messageerror">@Html.ValidationMessage("Nombre")</span>
+</div>
+                        <div class="form-group mx-sm-4 pt-4">
+                            <input type="text" value="@account.Apellido" name="Apellido" class="form-control" placeholder="Apellidos" />
+                            <span class="messageerror">@Html.ValidationMessage("Apellido")</span>
+</div>
+                        <div class="form-group mx-sm-4 pt-4">
+                            <input type="text" value="@account.Correo" name="Correo" class="form-control" placeholder="Correo" />
+                            <span class="messageerror">@Html.ValidationMessage("Correo")</span>
+                        </div>
+                        <div class="form-group mx-sm-4 pt-4">
+                            <input type="password" value="@account.Contraseña" name="Contraseña" class="form-control" placeholder="Contraseña" />
+                            <span class="messageerror">@Html.ValidationMessage("Contraseña")</span>
+                        </div>
+                        <div class="form-group mx-sm-4 pt-4">
+                            <input type="password" name="VerfContraseña" class="form-control" placeholder="Verfificar Contraseña" />
+                            <span class="messageerror">@Html.ValidationMessage("VerfContraseña")</span>
+                        </div>
+                        <div class="form-group mx-sm-4 pb-1">
+                            <input type="submit" class="btn btn-block registrara" value="Registrarse" />
+                        </div>
+                        <div _ngcontent-c6="" class="external-login ng-star-inserted">
+
+                            <!--Facebook Boton-->
+                            <div class="fb-login-button" data-size="large" data-button-type="continue_with"
+                                 data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"
+                                 data-width="">
+                            </div>
+                        </div>
+                        <br />
+                    </form>
+                    <form action="/account/login" method="get">
+                        <div class="form-group text-center text-light">
+                            <span class="a">¿Ya tienes cuenta?</span>
+                            <button _ngcontent-c7="" class="btn btn-primary boton" tabindex="0">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

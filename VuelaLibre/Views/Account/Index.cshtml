@@ -1,0 +1,172 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="tm-section tm-bg-img" id="tm-section-1">
+    <div class="tm-bg-white ie-container-width-fix-2">
+        <div class="container ie-h-align-center-fix">
+            <div class="row">
+                <div class="col-xs-12 ml-auto mr-auto ie-container-width-fix">
+                    <form action="/account/buscar" method="post" class="tm-search-form tm-section-pad-2">
+                        <div class="form-row tm-search-form-row">
+                            <div class="form-group tm-form-element tm-form-element-100">
+                                <i class="fa fa-map-marker tm-form-element-icon"></i>
+                                <input name="Origen" type="text" class="form-control" id="inputCity" placeholder="Origen...">
+                                @Html.ValidationMessage("Origen")
+                                <input name="userid" type="hidden" value="@ViewBag.userid">
+                            </div>
+                            <div class="form-group tm-form-element tm-form-element-100">
+                                <i class="fa fa-map-marker tm-form-element-icon"></i>
+                                <input name="Destino" type="text" class="form-control" id="inputCity" placeholder="Destino...">
+                                @Html.ValidationMessage("Destino")
+                            </div>
+                            <div class="form-group tm-form-element tm-form-element-50">
+                                <i class="fa fa-calendar  tm-form-element-icon"></i>
+                                <input name="FechaIda" type="datetime" class="form-control" id="inputCheckIn" placeholder="Fecha de ida">
+                                @Html.ValidationMessage("FechaIda")
+                                @Html.ValidationMessage("FechaIda22")
+                            </div>
+                            
+                                <div class="form-group tm-form-element tm-form-element-2">
+                                    <select name="adult" class="form-control tm-select" id="adult">
+                                        <option value="">Personas</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                    <i class="fa fa-2x fa-user tm-form-element-icon"></i>
+                                </div>
+                                <div class="form-group tm-form-element tm-form-element-2">
+                                    <button type="submit" class="btn btn-primary tm-btn-search">Buscar </button>
+                                </div>
+                        </div>
+                        <div class="form-row clearfix pl-2 pr-2 tm-fx-col-xs">
+                            <p class="tm-margin-b-0"></p>
+                            <a href="#" class="ie-10-ml-auto ml-auto mt-1 tm-font-semibold tm-color-primary">Necesitas ayuda?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tm-section-2">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h2 class="tm-section-title">Estamos aquí para ayudarte</h2>
+                <p class="tm-color-white tm-section-subtitle">Suscríbase para recibir nuestros boletines</p>
+                <a href="#" class="tm-color-white tm-btn-white-bordered">Subscribirse</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tm-section tm-position-relative">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="tm-section-down-arrow">
+        <polygon fill="#50b7ee" points="0,0  100,0  50,60"></polygon>
+    </svg>
+    <div class="container tm-pt-5 tm-pb-4">
+        <div class="col text-center">
+            <h2 class="tm-section-title-2">Destinos Destacados </h2>
+        </div>
+    </div>
+    <div id="carouselExampleControls" class="carousel slide carrousel" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active iquitos text-center">
+                <i class="fa tm-fa-6x fas fa-plane-departure tm-color-primary tm-margin-b-20"></i>
+                <h3 class="tm-color-white tm-article-title-1">
+                    LIMA
+                </h3>
+                <i class="fa tm-fa-6x fas fa-plane-arrival tm-color-primary tm-margin-b-20"></i>
+                <h3 class="tm-color-white tm-article-title-1">
+                    IQUITOS
+                </h3>
+                <p>Desde:</p>
+                <h1 class="tm-color-primary"><b> $ 35.00 </b></h1>
+                <h3 class="tm-color-primary"><b> S/ 123.00 </b></h3>
+            </div>
+            <div class="carousel-item tarapoto text-center">
+                <i class="fa tm-fa-6x fas fa-plane-departure tm-color-primary tm-margin-b-20"></i>
+                <h3 class="tm-color-white tm-article-title-1">
+                    LIMA
+                </h3>
+                <i class="fa tm-fa-6x fas fa-plane-arrival tm-color-primary tm-margin-b-20"></i>
+                <h3 class="tm-color-white tm-article-title-1">
+                    TARAPOTO
+                </h3>
+                <p>Desde:</p>
+                <h1 class="tm-color-primary"><b> $ 39.00</b> </h1>
+                <h3 class="tm-color-primary"><b> S/ 139.00 </b></h3>
+            </div>
+            <div class="carousel-item arequipa text-center">
+                <i class="fa tm-fa-6x fas fa-plane-departure tm-color-primary tm-margin-b-20"></i>
+                <h3 class="tm-color-white tm-article-title-1">
+                    LIMA
+                </h3>
+                <i class="fa tm-fa-6x fas fa-plane-arrival tm-color-primary tm-margin-b-20"></i>
+                <h3 class="tm-color-white tm-article-title-1">
+                    AREQUIPA
+                </h3>
+                <p>Desde:</p>
+                <h1 class="tm-color-primary"><b>$ 36.00 </b></h1>
+                <h3 class="tm-color-primary"><b> S/ 126.00 </b></h3>
+            </div>
+            <div class="carousel-item cajamarca text-center">
+                <i class="fa tm-fa-6x fas fa-plane-departure tm-color-primary tm-margin-b-20"></i>
+                <h3 class="tm-color-white tm-article-title-1">
+                    LIMA
+                </h3>
+                <i class="fa tm-fa-6x fas fa-plane-arrival tm-color-primary tm-margin-b-20"></i>
+                <h3 class="tm-color-white tm-article-title-1">
+                    CAJAMARCA
+                </h3>
+                <p>Desde:</p>
+                <h1 class="tm-color-primary"><b> $ 32.00 </b></h1>
+                <h3 class="tm-color-primary"><b> S/ 105.00 </b></h3>
+            </div>
+            <div class="carousel-item trujillo text-center">
+                <i class="fa tm-fa-6x fas fa-plane-departure tm-color-primary tm-margin-b-20"></i>
+                <h3 class="tm-color-white tm-article-title-1">
+                    LIMA
+                </h3>
+                <i class="fa tm-fa-6x fas fa-plane-arrival tm-color-primary tm-margin-b-20"></i>
+                <h3 class="tm-color-white tm-article-title-1">
+                    TRUJILLO
+                </h3>
+                <p>Desde:</p>
+                <h1 class="tm-color-primary"><b> $ 24.00 </b></h1>
+                <h3 class="tm-color-primary"><b> S/ 95.00 </b></h3>
+            </div>
+            <div class="carousel-item piura text-center">
+                <i class="fa tm-fa-6x fas fa-plane-departure tm-color-primary tm-margin-b-20"></i>
+                <h3 class="tm-color-white tm-article-title-1">
+                    LIMA
+                </h3>
+                <i class="fa tm-fa-6x fas fa-plane-arrival tm-color-primary tm-margin-b-20"></i>
+                <h3 class="tm-color-white tm-article-title-1">
+                    PIURA
+                </h3>
+                <p>Desde:</p>
+                <h1 class="tm-color-primary"><b> $ 38.00 </b></h1>
+                <h3 class="tm-color-primary"><b> S/ 134.00 </b></h3>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>

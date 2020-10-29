@@ -1,0 +1,53 @@
+﻿@{
+    List<Vuelo> vuelo = ((List<Vuelo>)Model);
+    //var vuelos = ((List<Vuelo>)ViewBag.vuelo);
+}
+
+<div class="tm-section tm-bg-img" id="tm-section-1">
+
+    <div class="tm-bg-white">
+
+        <div class="table-responsive">
+
+            <div class="container ie-h-align-center-fix">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Origen</th>
+                            <th>Destino</th>
+                            <th>Aerolinea</th>
+                            <th>Fecha de Salida / Hora</th>
+                            <th>Tiempo de Vuelo</th>
+                            <th>Cantidad de Pasajes</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in vuelo)
+                        {
+
+                            <tr>
+                                <td><b>@item.Origen </b> <i class="fa fas fa-plane-departure tm-color-primary tm-margin-b-20"></i></td>
+                                <td><b>@item.Destino </b> <i class="fa fas fa-plane-arrival tm-color-primary tm-margin-b-20"></i></td>
+                                <td>@item.Aerolinea <i class="fa fas fa-plane tm-color-primary tm-margin-b-20"></i> </td>
+                                <td>@item.FechaIda <i class="fa fas fa-plane-departure tm-color-primary tm-margin-b-20"></i> </td>
+                                <td>@item.TiempoVuelo Min. <i class="fa fas fa-stopwatch tm-color-primary tm-margin-b-20"></i> </td>
+                                <td>@item.TotalPasaje <i class="fa fas fa-users tm-color-primary  tm-margin-b-20"></i> </td>
+                                <td>$ @item.Precio <i class="fa fas fa-money-bill tm-color-primary tm-margin-b-20"></i> </td>
+                                
+                                <td> <a href="/Account/comprar?id=@item.Id">Comprar</a></td>
+                            </tr>
+                        }
+
+
+
+                    </tbody>
+                </table>
+                
+            </div>
+
+        </div>
+
+    </div>

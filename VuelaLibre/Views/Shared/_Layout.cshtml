@@ -1,0 +1,162 @@
+﻿@{ 
+    //List<Account> account = ((List<Account>)Model);
+    //var account = (Account)Model;
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>VuelaLibre</title>
+
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/lib/datepicker/datepicker.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="icon" href="~/avion.ico" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/slick/slick-theme.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/index/tooplate-style.css" />
+    <link rel="stylesheet" href="~/css/register/register.css" />
+
+</head>
+<body>
+    <header>
+        <div class="tm-top-bar" id="tm-top-bar">
+            <!-- Top Navbar -->
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg narbar-light">
+
+
+
+                        <a class="navbar-brand mr-auto" asp-area="" asp-controller="Account" asp-action="">
+                            <img class="logo" src="~/img/logoOriginal.jpg">
+
+                        </a>
+                        <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div id="mainNav" class="collapse navbar-collapse tm-bg-white" >
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Account" asp-action="">Home</a>
+                                </li>
+                                <li class="nav-item">
+
+                                    <a class="nav-link" asp-area="" asp-controller="Account" asp-action="MostrarVuelos">Vuelos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="">Ofertas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="">Aerolíneas</a>
+                                </li>
+                                </ul>
+                        </div>
+
+                        <div class="collapse navbar-collapse tm-bg-white d-sm-inline-flex flex-sm-row-reverse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                @if (!User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register"><b>Registrarse </b><i class="fas fa-angle-right"></i> </a>
+
+                                    </li>
+
+                                    <li>
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login"><b>Iniciar Sessión </b><i class=" fas fa-sign-in-alt"></i></a>
+
+                                    </li>
+                                }
+                                @if (User.Identity.IsAuthenticated)
+                                {
+
+                                    <li>
+
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout"><b>LogOut </b></a>
+
+
+                                    </li>
+
+                                    <li>
+
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Perfil"><b>@User.Claims.FirstOrDefault().Value</b></a>
+
+
+                                    </li>
+
+
+                                    if (@User.Claims.FirstOrDefault().Value == "admin@gmail.com")
+                                    {
+                                        <li class="nav-item">
+                                            <a href="/account/crearvuelo" class="nav-link text-dark">Crear Vuelo</a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div>
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer tm-bg-dark-blue">
+
+        <div class="row">
+            <p class="col-sm-12 text-center tm-font-light tm-color-white p-2 tm-margin-b-0">
+                Copyright &copy; <span class="tm-current-year">2020</span> VuelaLibre
+            </p>
+        </div>
+
+    </footer>
+
+    <script>
+        function setCarousel() {
+
+            if ($('.tm-article-carousel').hasClass('slick-initialized')) {
+                $('.tm-article-carousel').slick('destroy');
+            }
+
+            if ($(window).width() < 438) {
+                // Slick carousel
+                $('.tm-article-carousel').slick({
+                    infinite: false,
+                    dots: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                });
+            }
+            else {
+                $('.tm-article-carousel').slick({
+                    infinite: false,
+                    dots: true,
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                });
+            }
+        }
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v8.0&appId=689477061776731&autoLogAppEvents=1" nonce="oqUMg0jn"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

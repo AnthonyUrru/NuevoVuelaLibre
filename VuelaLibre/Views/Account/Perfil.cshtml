@@ -1,0 +1,181 @@
+﻿@{
+    //var accounts = ((List<Account>)ViewBag.Accounts);
+    var accounts = (Account)ViewBag.Accounts; // FORMA a
+    var vuelos = ((List<DetalleVuelo>)ViewBag.DetalleVuelo);
+}
+    <div class="tm-section tm-bg-img" id="tm-section-1">
+        <div class="container text-md-center">
+            <div class="row justify-content-center pt-5 mt-5 mr-1">
+                <div class="tm-bg-white">
+                    <div class="container">
+                        <div class="row my-2">
+                            <div class="col-lg-8 order-lg-2">
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                        <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Datos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="" data-target="#messages" data-toggle="tab" class="nav-link">Lista Pasajes</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Editar Datos</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content py-4">
+                                    <div class="tab-pane active" id="profile">
+                                        <h5 class="mb-3">Perfil de Usuario</h5>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>DATOS USUARIO</h6>
+                                                <form role="form">
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label form-control-label">Nombres</label>
+                                                        <div class="col-lg-9">
+                                                            <input class="form-control" type="text" value="@accounts.Nombre" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label form-control-label">Apellidos</label>
+                                                        <div class="col-lg-9">
+                                                            <input class="form-control" type="text" value="@accounts.Apellido" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                                        <div class="col-lg-9">
+                                                            <input class="form-control" type="email" value="@accounts.Correo" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-lg-3 col-form-label form-control-label">Saldo</label>
+                                                        <div class="col-lg-9">
+                                                            <input class="form-control" type="email" value="@accounts.saldo" readonly>
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h6>PASAJES RECIENTES </h6>
+                                                <table class="table table-sm table-hover table-striped">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Abby</strong> joined ACME Project Team in <strong>`Collaboration`</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Gary</strong> deleted My Board1 in <strong>`Discussions`</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Kensington</strong> deleted MyBoard3 in <strong>`Discussions`</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>John</strong> deleted My Board1 in <strong>`Discussions`</strong>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <strong>Skell</strong> deleted his post Look at Why this is.. in <strong>`Discussions`</strong>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!--/row-->
+                                    </div>
+                                   
+                                       
+                                        <div class="tab-pane" id="messages">
+                                            <div class="alert alert-info alert-dismissable">
+                                                @for (var j = 0; j < vuelos.Count; j++)
+                                                {
+                                                    var item2 = vuelos[j];
+                                                <tr>
+                                                    <td>@(j+1) .- Nombre:  @item2.Nombres </td>|
+
+                                                    <td> Apellido:  @item2.Apellidos </td>|
+
+                                                    <td> Origen:  @item2.Origen </td>|
+
+                                                    <td> Destino:  @item2.Destino </td>|
+
+                                                    <td> DNI:  @item2.Dni </td>|
+
+                                                    <td> Numero de asiento:  @item2.Nasiento </td>|
+
+                                                    <td> Precio:  @item2.precio </td>
+
+                                                </tr>
+                                                    <br />
+                                                }
+                                            </div>
+
+                                        </div>
+                                    
+                                        <div class="tab-pane" id="edit">
+                                            <form role="form">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                                                    <div class="col-lg-9">
+                                                        <input class="form-control" type="text" value="Jane">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                                                    <div class="col-lg-9">
+                                                        <input class="form-control" type="text" value="Bishop">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                                    <div class="col-lg-9">
+                                                        <input class="form-control" type="email" value="email@gmail.com">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                                                    <div class="col-lg-9">
+                                                        <input class="form-control" type="password" value="11111122333">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                                                    <div class="col-lg-9">
+                                                        <input class="form-control" type="password" value="11111122333">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                                                    <div class="col-lg-9">
+                                                        <input type="reset" class="btn btn-secondary" value="Cancel">
+                                                        <input type="button" class="btn btn-primary" value="Save Changes">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-lg-4 order-lg-1 text-center">
+                                <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                                <h6 class="mt-2">Sube una foto diferente</h6>
+                                <label class="custom-file">
+                                    <input type="file" id="file" class="custom-file-input">
+                                    <span class="custom-file-control">Seleccionar Archivo</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+

@@ -1,0 +1,57 @@
+﻿
+@{
+    var account = (Account)Model;
+    //var account = (Account)ViewBag.Account; // FORMA a
+}
+
+<body class="reg">
+    <div class="tm-section tm-bg-img" id="tm-section-1">
+        <div class="container text-md-center">
+
+            <div class="row justify-content-center pt-5 mt-5 mr-1">
+                <div class="col-md-4 formulario">
+                    <form action="/account/login" method="post">
+
+                        <div class="form-group text-center">
+
+                            <br />
+                            <h3 class="titulo">Inicia Sesión</h3>
+                        </div>
+                        <div class="form-group mx-sm-4 ">
+                            <input type="text" class="form-control" name="Correo" placeholder="Email" />
+                            <span class="messageerror">@Html.ValidationMessage("Correo")</span>
+                        </div>
+                        <div class="form-group mx-sm-4 pt-4">
+                            <input type="password" class="form-control" name="Contraseña" placeholder="Contraseña" />
+                            <span class="messageerror">@Html.ValidationMessage("Contraseña")</span>
+                            <span class="messageerror">@Html.ValidationMessage("Login")</span>
+                        </div>
+
+                        <div class="form-group mx-sm-4 pb-4">
+                            <input type="submit" class="btn btn-block registrara" value="Entrar" />
+                        </div>
+
+                        <div _ngcontent-c6="" class="external-login ng-star-inserted">
+
+                            <!--Facebook Boton-->
+                            <div class="fb-login-button" data-size="large" data-button-type="continue_with"
+                                 data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"
+                                 data-width="">
+
+                            </div>
+                        </div>
+                        <br />
+                    </form>
+                    <form action="/account/register" method="get">
+                        <div class="form-group text-center text-light">
+                            <span class="a">¿No tienes cuenta?</span>
+                            <button _ngcontent-c7="" class="btn btn-primary boton" tabindex="0">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+

@@ -1,0 +1,71 @@
+﻿.avatar {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -26%;
+    left: calc(50% - 50px);
+}
+
+.messageerror {
+    color: red;
+}
+
+.titulo {
+    color: mediumpurple;
+    font-family: 'Century Gothic';
+    font-size: 50px;
+}
+
+.formulario {
+    margin: 20px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 0 30px rgba(0,0,0,.568);
+}
+
+.registrara {
+    background-color: paleturquoise;
+    font-family: 'Century Gothic';
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 700 !important;
+    color: black;
+    transition: 0.5s ease-in;
+}
+
+.a {
+    font-size: 15px;
+    font-family: 'Century Gothic';
+    color: black;
+}
+
+.boton {
+    color: black;
+    background-color: paleturquoise;
+    font-family: 'Century Gothic';
+    border-radius: 5px;
+    border-color: paleturquoise;
+}
+
+.d {
+    font-size: 70px;
+    font-family: 'Times New Roman';
+    color: white;
+}
+
+.bl {
+    color: white;
+}
+
+.icon icon-esky-facebook {
+    icon: url(../descarga.ico);
+}
+
+.registrar:hover {
+    color: white;
+}
+
+.logo {
+    width: 230px;
+    height: 100px;
+}
